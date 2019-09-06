@@ -2,24 +2,16 @@
 
 import os
 
-fileDirectory = input("Place a file from the directory: ")
-fileDirectory = os.path.dirname(os.path.realpath(fileDirectory))
-print(os.path.dirname(os.path.realpath(fileDirectory)))
-print(os.path.dirname(fileDirectory))
-print(fileDirectory)
-removeLetter = input("What character to remove? ")
-replaceWith = input("What to replace with? ")
-
-def findFileType(file):
+def findFileType(f):
     '''
-    Takes in file name
-    Returns file type extension and start position of file type
+    Input: file name
+    Return: file type extension and start position of file type
     '''
     revFileType = ''
     fileType = ''
     hasFileType = bool
     position = 0
-    for letter in reversed(file):
+    for letter in reversed(f):
         position -= 1
         if letter == ".":
             revFileType += "."
@@ -32,19 +24,17 @@ def findFileType(file):
             fileType += character
         return fileType, position
     else:
-        return ('', len(file))
+        return ('', len(f))
 
-def createNewName(file):
+def createNewName(f):
     '''
-    Takes in file name
-    Returns file name with characters replaced and file extension added
+    Input: file name
+    Return: file name with characters replaced and file extension added
     '''
-    fileType = findFileType(file)[0]
-    fileTypePos = findFileType(file)[1]
-    fileWithoutType = file[:fileTypePos]
+    fileType = findFileType(f)[0]
+    fileTypePos = findFileType(f)[1]
+    fileWithoutType = f[:fileTypePos]
     newName = ''
-
-    print("here1")
 
     for letter in fileWithoutType:
         if letter == removeLetter:
@@ -53,21 +43,33 @@ def createNewName(file):
             newName += letter
     return newName + fileType
 
-def fileRename(confirm=0):
-    if confirm == 1:
-        for file in os.listdir(fileDirectory):
-            os.rename(file, createNewName(file))
-    else:
-        for file in os.listdir(fileDirectory):
-            print(createNewName(file))
+def fileRename(request):
+    '''
+    Input: request [print: displays changes, y: writes changes]
+    Output: prints list of changes or writes changes
+    '''
+    file_list = os.listdir(fileDirectory)
+    if request == 'y':
+        for f in file_list:
+            os.rename(os.path.join(fileDirectory, f), os.path.join(fileDirectory, createNewName(f)))
+    elif request == 'print':
+        for f in file_list:
+            print(createNewName(f))
+    
 
-def main():
-    while True:
-        fileRename()
-        confirm = input("Press 1 to confirm, press c to cancel: ")
-        if confirm == 'c':
-            break
-        else:
-            fileRename(confirm)
+if __name__ == "__main__":
 
-main()
+    continue_program = 'y'
+
+    while continue_program == 'y':
+
+        fileDirectory = input("Place a file from the directory: ")
+        fileDirectory = os.path.dirname(os.path.realpath(fileDirectory))
+        print(fileDirectory)
+        removeLetter = input("What character to remove? ")
+        replaceWith = input("What to replace with? ")
+        
+        fileRename('print')
+        confirm = input("Press y to confirm, press c to cancel: ").lower()
+        fileRename(confirm)
+        continue_program = input("Press y to continue renaming: ").lower()
