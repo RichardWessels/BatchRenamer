@@ -26,7 +26,7 @@ def findFileType(f):
     else:
         return ('', len(f))
 
-def createNewName(f):
+def createNewName(f, removeLetter, replaceWith):
     '''
     Input: file name
     Return: file name with characters replaced and file extension added
@@ -34,16 +34,10 @@ def createNewName(f):
     fileType = findFileType(f)[0]
     fileTypePos = findFileType(f)[1]
     fileWithoutType = f[:fileTypePos]
-    newName = ''
 
-    for letter in fileWithoutType:
-        if letter == removeLetter:
-            newName += replaceWith
-        else:
-            newName += letter
-    return newName + fileType
+    return fileWithoutType.replace(removeLetter, replaceWith) + fileType
 
-def fileRename(request):
+def fileRename(request, fileDirectory, removeLetter, replaceWith):
     '''
     Input: request [print: displays changes, y: writes changes]
     Output: prints list of changes or writes changes
@@ -51,10 +45,11 @@ def fileRename(request):
     file_list = os.listdir(fileDirectory)
     if request == 'y':
         for f in file_list:
-            os.rename(os.path.join(fileDirectory, f), os.path.join(fileDirectory, createNewName(f)))
+            os.rename(os.path.join(fileDirectory, f), os.path.join(fileDirectory, createNewName(f, removeLetter, replaceWith)))
     elif request == 'print':
         for f in file_list:
-            print(createNewName(f))
+            print(createNewName(f, removeLetter, replaceWith))
+        return [createNewName(f, removeLetter, replaceWith) for f in file_list]
     
 
 if __name__ == "__main__":
@@ -69,7 +64,7 @@ if __name__ == "__main__":
         removeLetter = input("What character to remove? ")
         replaceWith = input("What to replace with? ")
         
-        fileRename('print')
+        fileRename('print', fileDirectory, removeLetter, replaceWith)
         confirm = input("Press y to confirm, press c to cancel: ").lower()
-        fileRename(confirm)
+        # fileRename(confirm)
         continue_program = input("Press y to continue renaming: ").lower()
