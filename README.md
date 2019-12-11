@@ -15,19 +15,19 @@ Running the GUI:
 - Open up your terminal and find the folder that contains the program files (BatchRenamer).
 - Run the command `python3 gui.py`. If this doesn't work, try: `python gui.py`.
 
-![Interface](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/Interface.png)
+![Interface](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/Interface.png)
 
-![Open File](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/FileOpen.png)
+![Open File](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/FileOpen.png)
 Don't forget to select one of the files.
 
-![Interface in action](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/InterfaceInAction.png)
+![Interface in action](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/InterfaceInAction.png)
 
 Running the command-line interface:
 
 - Open up your terminal and find the folder that contains the program files (BatchRenamer).
 - Run the command `python3 batch_file_renamer.py`. If this doesn't work, try: `python batch_file_renamer.py`.
 
-![Command line interface in action](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/CLIUsage.png)
+![Command line interface in action](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/CLIUsage.png)
 
 Use cases:
 
