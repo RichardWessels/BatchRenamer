@@ -8,7 +8,7 @@ Prerequisites:
 - Tkinter (usually bundled with Python)
 - Ability to navigate terminal/Power Shell/Command Prompt (for brevity sake, I'll just say terminal from now on)
 
-The program has both a graphical user interface (GUI) and a command-line interface.
+The program has both a graphical user interface (GUI) and a command-line interface (CLI).
 
 Running the GUI:
 
@@ -22,7 +22,7 @@ Don't forget to select one of the files.
 
 ![Interface in action](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/InterfaceInAction.png)
 
-Running the command-line interface:
+Running the CLI:
 
 - Open up your terminal and find the folder that contains the program files (BatchRenamer).
 - Run the command `python3 batch_file_renamer.py`. If this doesn't work, try: `python batch_file_renamer.py`.
@@ -31,8 +31,8 @@ Running the command-line interface:
 
 Use cases:
 
-- If you have a series that seperates words with a periods instead of spaces.
-- If there is a word you would like to remove from many files.
+- If you have a file that seperates words with periods instead of spaces.
+- If there is a word you would like to remove from multiple files.
 - And hopefully a bunch more.
 
 I hope you find this program useful.
