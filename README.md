@@ -18,6 +18,7 @@ Running the GUI:
 ![Interface](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/Interface.png)
 
 ![Open File](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/FileOpen.png)
+
 Don't forget to select one of the files.
 
 ![Interface in action](https://raw.githubusercontent.com/RichardWessels/BatchRenamer/master/usageImages/InterfaceInAction.png)
@@ -31,7 +32,7 @@ Running the CLI:
 
 Use cases:
 
-- If you have a file that seperates words with periods instead of spaces.
+- If you have a file(s) that seperates words with periods instead of spaces.
 - If there is a word you would like to remove from multiple files.
 - And hopefully a bunch more.
 
