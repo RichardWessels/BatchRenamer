@@ -60,11 +60,12 @@ if __name__ == "__main__":
 
         fileDirectory = input("Place a file from the directory: ")
         fileDirectory = os.path.dirname(os.path.realpath(fileDirectory))
-        print(fileDirectory)
+        print("Chosen file directory:", fileDirectory)
         removeLetter = input("What character to remove? ")
         replaceWith = input("What to replace with? ")
         
         fileRename('print', fileDirectory, removeLetter, replaceWith)
-        confirm = input("Press y to confirm, press c to cancel: ").lower()
-        # fileRename(confirm)
+        confirm = input("Press y to confirm: ").lower()
+        if confirm == 'y':
+            fileRename(confirm, fileDirectory, removeLetter, replaceWith)
         continue_program = input("Press y to continue renaming: ").lower()

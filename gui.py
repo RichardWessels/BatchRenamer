@@ -24,8 +24,11 @@ class App():
 
     def renameConfirm(self):
         print(f"The value of entry field 1: {self.entryField1.get()} and entry field 2: {self.entryField2.get()}")
-        renamer.fileRename('print', self.get_file_path(), self.entryField1.get(), self.entryField2.get())
-        print("Tried to rename, but I don't trust myself with that power...")
+        try:
+            renamer.fileRename('y', self.get_file_path(), self.entryField1.get(), self.entryField2.get())
+            print("Changes made.")
+        except:
+            print("Write error.")
 
     def keyPress(self, event):
         print(f"Entry field 1 updated to {self.entryField1.get()}")

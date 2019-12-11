@@ -1,11 +1,38 @@
 # BatchRenamer
+
 Renames multiple files by replacing specified characters with new characters. This can remove unwanted characters in multiple file names. The program detects file extensions so using the program to remove periods will not affect the file type.
 
-Example usage:
+Prerequisites:
 
-Files: ```test.1.txt, test.2.md, attempt.77.vlc```
-```
-What character to remove? .
-What to replace with? _
-```
-Result: ```test_1.txt, test_2.md, attempt_77.vlc```
+- Python 3
+- Tkinter (usually bundled with Python)
+- Ability to navigate terminal/Power Shell/Command Prompt (for brevity sake, I'll just say terminal from now on)
+
+The program has both a graphical user interface (GUI) and a command-line interface.
+
+Running the GUI:
+
+- Open up your terminal and find the folder that contains the program files (BatchRenamer).
+- Run the command `python3 gui.py`. If this doesn't work, try: `python gui.py`.
+
+![Interface](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/Interface.png)
+
+![Open File](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/FileOpen.png)
+Don't forget to select one of the files.
+
+![Interface in action](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/InterfaceInAction.png)
+
+Running the command-line interface:
+
+- Open up your terminal and find the folder that contains the program files (BatchRenamer).
+- Run the command `python3 batch_file_renamer.py`. If this doesn't work, try: `python batch_file_renamer.py`.
+
+![Command line interface in action](https://github.com/RichardWessels/BatchRenamer/tree/master/usageImages/CLIUsage.png)
+
+Use cases:
+
+- If you have a series that seperates words with a periods instead of spaces.
+- If there is a word you would like to remove from many files.
+- And hopefully a bunch more.
+
+I hope you find this program useful.
